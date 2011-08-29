@@ -1,0 +1,86 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+:focus {outline: 0;}
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+* {margin:0; padding:0;}
+ol, ul{list-style:none;}
+strong { font-weight: 700;}
+em {font-style: italic;}
+* a {position:relative;} /* Gets links displaying over a PNG background */
+a {outline:none;} /* Gets rid of Firefox's dotted borders */
+a img {border:none;} /* Gets rid of IE's blue borders */
+select img {border:none;}
+img {border:none;}
+.clear {clear: both;}
+.left {float: left;}
+.right {float: right;}
+.hidden {display: none;}
+.center {text-align: center;}
+.strong {font-weight: bold;}
+
+a, a:visited {text-decoration: none; outline: none; color: #e99519;}
+a:hover {text-decoration: underline; color: #e99519;}
+
+body {
+	background: #333 url(../images/scribble.png) repeat-y top center;
+	
+	font-family: Helvetica;
+	font-size: 1em;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+	text-align: center; /* for IE */
+}
+
+#wrapper{color: #fff;width: 95%;height: 95%;text-align: left;overflow: visible;position: relative; margin: 0 auto;background: transparent url(../images/logo.png) no-repeat right top;}
+.print-logo {display:none;}
+
+#header {padding: 15px 0 10px;}
+#header h1 {font-size:1.5em;padding-bottom: 10px;}
+#header h2 {font-size:1.3em;padding-bottom: 15px;}
+#header h3 {font-size:1.2em;padding-bottom: 5px;}
+#header p {font-size: 1em; padding-bottom: 10px;}
+#header span {color: #e99519;}
+
+.change-form {margin-bottom:10px;}
+.change-form select {border: 1px solid #e99519; margin-right: 10px;}
+.change-form .submit {border: 1px solid #e99519; color: #000;padding-left:5px;padding-right:5px;cursor:pointer;background: #fff;}
+.change-form .submit:hover {color:#fff;background:#e99519;text-decoration: none;}
+
+.less-padding {padding-bottom: 5px !important;}
+.top-padding {padding-top: 15px !important;padding-bottom: 5px !important;}
+
+#content table {width:100%;border:1px solid #fff;}
+#content table thead, #content table tr.totals {color:#e99519;font-weight:bold;}
+#content table thead tr, #content table tr.totals {background: #000;}
+#content table th {text-align: center;padding: 6px;}
+#content table tr.even {background:#444;}
+#content table tr.odd {background:#777;}
+#content table tr.nb {background:#e99519;color:#000;}
+#content table td {padding: 9px;}
+#content table td.desc {border-right:1px solid #fff;width:65%;}
+#content table td.date {border-right:1px solid #fff;width:12%;}
+#content table td.dur {border-right:1px solid #fff;width:12%;}
+#content table td.money {width:11%;}
+#content table tr.totals td {border:none;}
+
+#footer {padding:15px 0 15px 10px;}
+#footer p {font-size: 0.85em; line-height: 1.5em; color: #fff;}
+
+.yui-dt-col-AUTONUMBER {display:none;}
+.yui-dt-col-CLIENT {display:none;}
+.yui-dt-col-PROJECT {display:none;}
+.yui-dt-col-DELETE {border-right-width: 0px !important;}
+.yui-skin-sam .yui-dt table {width:100%;} #cellediting1 {margin-top:10px;}
+#edit_extras_pane {background-color:#333333;border:3px solid #000000;position:absolute;top:-9999px;padding:12px;width:90%;z-index:8000;left:5%;
+-moz-box-shadow:0 0 23px #000;-webkit-box-shadow:0 0 23px #000;box-shadow:0 0 23px #000;
+-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
