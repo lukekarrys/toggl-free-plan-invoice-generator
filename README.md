@@ -18,6 +18,7 @@ To activate the ability to add arbitrary amounts to any invoice:
 `CREATE TABLE extra_items (AUTONUMBER INT NOT NULL AUTO_INCREMENT PRIMARY KEY, CLIENT INT, PROJECT INT, DESCRIPTION TEXT, TOTAL DECIMAL(19,4));`
 
 To add contact info to invoice:
+
 - Define `DISPLAY_CONTACT` as `true`
 - Define `CONTACT_` constants appropriately
 
