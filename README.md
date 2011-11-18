@@ -33,14 +33,14 @@ Define default values array:
 $default_clients_values = array(
   "preHourly" => 500, // An hourly wage
   "postHourly" => 1000, // An hourly wage
-  "hourlyChange" => "9/1/2011", // A date, all taks before this date will use preHourly, all after will use postHourly
+  "hourlyChange" => "9/1/2011", // A date, all tasks before this date will use preHourly, all after will use postHourly
   "dontRound" => false // Whether to round task times to the nearest quarter hour
 );
 ```
 
 ### Add clients
 
-Clients is an associative array where each key is the client ID (defined by Toggl) and the value is an associative array idential to `$$default_clients_values`.
+Clients is an associative array where each key is the client ID (defined by Toggl) and the value is an associative array whose keys are identical to `$default_clients_values`.
 
 For example:
 
