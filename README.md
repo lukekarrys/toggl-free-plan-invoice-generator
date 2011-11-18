@@ -28,6 +28,7 @@ To add contact info to invoice:
 ### Define defaults
 
 Define default values array:
+
 ```
 $default_clients_values = array(
   "preHourly" => 500, // An hourly wage
