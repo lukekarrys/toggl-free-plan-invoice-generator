@@ -11,6 +11,7 @@
 ### Optional
 
 To activate the ability to add arbitrary amounts to any invoice:
+
 - Define `ALLOW_EXTRAS` as `true`
 - Define `DB_CONN`, `DB_USER`, `DB_PASS`
 - Create MySQL database by running:
