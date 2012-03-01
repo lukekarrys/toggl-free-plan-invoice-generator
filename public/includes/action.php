@@ -3,8 +3,17 @@
 include('functions.php');
 
 $requestClients = returnClients();
+$requestProjects = returnProjects();
 
 //---------------------------------------------------------------------------
+
+$clientsWithProjects = array();
+// Find all client IDs with projects
+foreach($requestProjects as $project) {
+  if (!in_array($project['client']['id'], $clientsWithProjects)) {
+    array_push($clientsWithProjects, $project['client']['id']);
+  }
+}
 
 // Iterate over client data
 $clientID = $_REQUEST["client"];
@@ -14,19 +23,21 @@ $clientOptions = '';
 foreach($requestClients as $client) {
   $selected = '';
   
-  if (!in_array($client['id'], $clients)) {
-    $clients[$client['id']] = $default_clients_values;
+  if (in_array($client['id'], $clientsWithProjects)) {
+    if (!in_array($client['id'], $clients)) {
+      $clients[$client['id']] = $default_clients_values;
+    }
+  
+    $clients[$client['id']]["name"] = $client["name"];
+    $clients[$client['id']]["id"] = $client["id"];
+  
+    if ($client['id'] == $clientID) {
+      $currentClient = $clients[$client['id']];
+      $selected = 'selected="selected"';
+    }
+  
+    $clientOptions .= '<option '.$selected.' value="invoice?client='.$client['id'].'">'.$client['name'].'</option>';
   }
-  
-  $clients[$client['id']]["name"] = $client["name"];
-  $clients[$client['id']]["id"] = $client["id"];
-  
-  if ($client['id'] == $clientID) {
-    $currentClient = $clients[$client['id']];
-    $selected = 'selected="selected"';
-  }
-  
-  $clientOptions .= '<option '.$selected.' value="invoice?client='.$client['id'].'">'.$client['name'].'</option>';
 }
 
 if (!$currentClient) {
@@ -36,8 +47,6 @@ if (!$currentClient) {
 //---------------------------------------------------------------------------
 
 if ($currentClient) {
-  
-  $requestProjects = returnProjects();
   
   // Iterate over project data
   $projectCount = 0;
