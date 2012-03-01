@@ -51,10 +51,15 @@ $clients = array(
     "postHourly" => 750,                                        // Override default
     "hourlyChange" => "11/11/2011",                             // Override default
     "dontRound" => true                                         // Override default
-  ),
-  77777 => $default_clients_values                              // Use all defaults
+  )
 );
 ```
+
+*Note: If a client is omitted from the `$clients` array but exists in Toggl, it will automatically be included with all the defaults.*
+
+## Clients and Projects
+
+A client will only show up in the clients dropdown if it has at least 1 non-archived project.
 
 ## Styling
 
