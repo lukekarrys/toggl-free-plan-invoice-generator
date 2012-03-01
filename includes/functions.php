@@ -11,57 +11,57 @@ function roundUp($value,$precision=0)
 } 
 
 function roundDuration($duration,$dont_round=false) {
-	$seconds = $duration;
-	
-	if ($seconds >= 3600) {
-		$hours = floor($seconds/3600);
-		$seconds = $seconds % 3600;
-	}
-	if ($dont_round) {
-		$minutes = ceil($seconds/60);
-		$decimalTime = $hours + roundUp($minutes/60,2);
-	} else {
-		switch ($seconds) {
-			case 0:
-				$seconds = 0;
-				break;
-			case ($seconds <= 900):
-				$seconds = 900;
-				break;
-			case ($seconds <= 1800):
-				$seconds = 1800;
-				break;
-			case ($seconds <= 2700):
-				$seconds = 2700;
-				break;
-			default:
-				$seconds = 3600;
-				break;
-		}
-		$decimalTime = $hours + ($seconds/3600);
-	}
-	return $decimalTime;
+  $seconds = $duration;
+  
+  if ($seconds >= 3600) {
+    $hours = floor($seconds/3600);
+    $seconds = $seconds % 3600;
+  }
+  if ($dont_round) {
+    $minutes = ceil($seconds/60);
+    $decimalTime = $hours + roundUp($minutes/60,2);
+  } else {
+    switch ($seconds) {
+      case 0:
+        $seconds = 0;
+        break;
+      case ($seconds <= 900):
+        $seconds = 900;
+        break;
+      case ($seconds <= 1800):
+        $seconds = 1800;
+        break;
+      case ($seconds <= 2700):
+        $seconds = 2700;
+        break;
+      default:
+        $seconds = 3600;
+        break;
+    }
+    $decimalTime = $hours + ($seconds/3600);
+  }
+  return $decimalTime;
 }
 
 function getBillable($decimalTime,$start,$pre,$post,$change) {
-	$change = strtotime(date($change." 00:00:00"));
-	$start = strtotime($start);
+  $change = strtotime(date($change." 00:00:00"));
+  $start = strtotime($start);
 
-	if ($start < $change) {
-		$hourly = $pre;
-	} else {
-		$hourly = $post;
-	}
+  if ($start < $change) {
+    $hourly = $pre;
+  } else {
+    $hourly = $post;
+  }
 
-	return $decimalTime * $hourly;
+  return $decimalTime * $hourly;
 }
 
 function checkNull($val) {
-	if (is_null($val)) {
-		return 'NA';
-	} else {
-		return $val;
-	}
+  if (is_null($val)) {
+    return 'NA';
+  } else {
+    return $val;
+  }
 }
 
 function sortTasksByStartDate($a, $b) {

@@ -28,18 +28,18 @@ a, a:visited {text-decoration: none; outline: none; color: #000;}
 a:hover {text-decoration: none; color: #000;}
 
 body {
-	background: #fff;
-	background-image: none;
-	color: #000;
-	font-family: Helvetica;
-	font-size: 11pt;
-	font-size-adjust: none;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: normal;
-	text-align: center; /* for IE */
+  background: #fff;
+  background-image: none;
+  color: #000;
+  font-family: Helvetica;
+  font-size: 11pt;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center; /* for IE */
 }
 
 #wrapper{text-align:left;width: 100%; margin: 0; float: none;}

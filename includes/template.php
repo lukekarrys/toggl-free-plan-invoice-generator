@@ -18,15 +18,16 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	$('#select_client').change(function() {
-	 var goto = $(this).val();
-	 if (goto != "#") window.location.href = goto;
+  $('#select_client').change(function() {
+   var goto = $(this).val();
+   if (goto != "#") window.location.href = goto;
   });
   
-  $('#submit_project').click(function() {
-	 if ($('#select_project').val() === '') return false;
+  $('#select_project').change(function() {
+    var goto = $(this).val();
+    if (goto != "#") window.location.href = goto;
   });
-	
+  
 });
 </script>
 
@@ -47,13 +48,12 @@ $(document).ready(function() {
       </div>
       <?php endif; ?>
       
-      <form action="#" class="change-form" method="POST" id="change_client">
+      <form action="#" class="change-form" method="GET" id="change_client">
         <select name="select_client" id="select_client" size="1"><?=$clientOptions?></select>
       </form>
       
-      <form action="invoice/" class="change-form" method="POST" id="change_project">
+      <form action="#" class="change-form" method="GET" id="change_project">
         <select name="select_project" id="select_project" size="1"><?=$projectOptions?></select>
-        <input type="submit" class="submit" value="Go To Project" id="submit_project" />
       </form>
   
       <h1>Invoice Sent: <span><?=date("F j, Y")?></span></h1>

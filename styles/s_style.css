@@ -28,17 +28,17 @@ a, a:visited {text-decoration: none; outline: none; color: #e99519;}
 a:hover {text-decoration: underline; color: #e99519;}
 
 body {
-	background: #333 url(../images/scribble.png) repeat-y top center;
-	
-	font-family: Helvetica;
-	font-size: 1em;
-	font-size-adjust: none;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: normal;
-	text-align: center; /* for IE */
+  background: #333 url(../images/scribble.png) repeat-y top center;
+  
+  font-family: Helvetica;
+  font-size: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center; /* for IE */
 }
 
 #wrapper{color: #fff;width: 95%;height: 95%;text-align: left;overflow: visible;position: relative; margin: 0 auto;background: transparent url(../images/logo.png) no-repeat right top;}
