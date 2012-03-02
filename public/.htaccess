@@ -1,1 +1,10 @@
 Options -indexes
+
+AuthUserFile /absolute/path/to/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Invoice Generator"
+AuthType Basic
+
+<Limit GET POST>
+require valid-user
+</Limit>
