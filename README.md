@@ -1,11 +1,12 @@
 # Setup Instructions
 
-## includes/config/setup.php
+## public/includes/config/setup.php
+
+- `mv public/includes/config/setup-sample.php public/includes/config/setup.php`
 
 ### Mandatory
 
 - Define `BASE_URL`
-- Define `TOGGL_API_URL`
 - Define `TOGGL_API_TOKEN`
 
 ### Optional
@@ -20,10 +21,12 @@ To activate the ability to add arbitrary amounts to any invoice:
 To add contact info to invoice:
 
 - Define `DISPLAY_CONTACT` as `true`
-- Define `CONTACT_` constants appropriately
+- Define `CONTACT_*` constants appropriately
 
 
-## includes/config/clients.php
+## public/includes/config/clients.php
+
+- `mv public/includes/config/clients-sample.php public/includes/config/clients.php`
 
 ### Define defaults
 
@@ -40,22 +43,29 @@ $default_clients_values = array(
 
 ### Add clients
 
-Clients is an associative array where each key is the client ID (defined by Toggl) and the value is an associative array whose keys are identical to `$default_clients_values`.
+`$clients` is an associative array where each key is the client ID (defined by Toggl) and the value is an associative array whose keys are identical to `$default_clients_values`. Use `$default_clients_values["KEY"]` to use a defaul client value for one key but override others.
 
 For example:
 
 ```
 $clients = array(
-  55555 => array(
-    "preHourly" => $default_clients_values["preHourly"],        // Use default
-    "postHourly" => 750,                                        // Override default
-    "hourlyChange" => "11/11/2011",                             // Override default
-    "dontRound" => true                                         // Override default
+  00000 => array(
+    "preHourly" => 2000,                                   // Override default
+    "postHourly" => 5000,                                  // Override default
+    "hourlyChange" => "1/1/2013",                          // Override default
+    "dontRound" => $default_clients_values["dontRound"],   // Use default
   )
 );
 ```
 
 *Note: If a client is omitted from the `$clients` array but exists in Toggl, it will automatically be included with all the defaults.*
+
+## Password Protection
+
+- `mv public/.htaccess-sample public/.htaccess`
+- `mv public/.htpasswd-sample public/.htpasswd`
+
+You will need to edit `AuthUserFile` in the `.htaccess` file to point to where the `.htpasswd` file will be on your server. It needs to be an absolute path. Then you can use an [htpasswd generator site](http://www.htaccesstools.com/htpasswd-generator/) to generate an entry to be pasted into your `.htpasswd` file.
 
 ## Clients and Projects
 

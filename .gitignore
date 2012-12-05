@@ -1,1 +1,5 @@
 deploy.sh
+public/.htaccess
+public/.htpasswd
+public/includes/config/setup.php
+public/includes/config/clients.php

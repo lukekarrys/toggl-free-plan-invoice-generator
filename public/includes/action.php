@@ -10,7 +10,7 @@ $requestProjects = returnProjects();
 $clientsWithProjects = array();
 // Find all client IDs with projects
 foreach($requestProjects as $project) {
-  if (!in_array($project['client']['id'], $clientsWithProjects)) {
+  if ($project['is_active'] && !in_array($project['client']['id'], $clientsWithProjects)) {
     array_push($clientsWithProjects, $project['client']['id']);
   }
 }
@@ -58,7 +58,7 @@ if ($currentClient) {
   
     $selected = "";
     
-    if ($project['client']['id'] == $currentClient['id']) {
+    if ($project['client']['id'] == $currentClient['id'] && $project['is_active']) {
     
       if ($projectCount == 0) {
         $firstClientProject = $project['id'];

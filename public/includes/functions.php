@@ -84,10 +84,9 @@ function callToggl($endpoint) {
 }
 
 function returnTasks() {
-  $start_date = date("c",strtotime(date("Y/m/d")." -1 year"));
-  $end_date = date("c",strtotime(date("Y/m/d")." +1 day"));
-  
-  return callToggl('tasks.json?start_date='.$start_date.'&end_date'.$end_date);
+  $start_date = urlencode(date("c",strtotime(date("Y/m/d")." -5 year")));
+  $end_date = urlencode(date("c",strtotime(date("Y/m/d")." +1 day")));
+  return callToggl('time_entries.json?start_date='.$start_date.'&end_date'.$end_date);;
 }
 
 function returnProjects() {

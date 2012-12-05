@@ -1,5 +1,6 @@
 <?php
   include_once('../config/setup.php');
+  include_once('../config/setup-private.php');
   
   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['REQUEST'] == 'update') {  
     $col = $_POST['COLUMN'];
