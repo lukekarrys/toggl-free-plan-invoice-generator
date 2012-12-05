@@ -53,7 +53,7 @@ $clients = array(
     "preHourly" => 2000,                                   // Override default
     "postHourly" => 5000,                                  // Override default
     "hourlyChange" => "1/1/2013",                          // Override default
-    "dontRound" => $default_clients_values["dontRound"],   // Use default
+    "dontRound" => $default_clients_values["dontRound"]    // Use default
   )
 );
 ```

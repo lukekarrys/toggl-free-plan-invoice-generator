@@ -13,7 +13,7 @@ $clients = array(
     "preHourly" => 2000,
     "postHourly" => 5000,
     "hourlyChange" => "1/1/2013",
-    "dontRound" => true
+    "dontRound" => $default_clients_values["dontRound"]
   )
   
 );
