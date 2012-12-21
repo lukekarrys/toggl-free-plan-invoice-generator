@@ -24,7 +24,7 @@ foreach($requestClients as $client) {
   $selected = '';
   
   if (in_array($client['id'], $clientsWithProjects)) {
-    if (!in_array($client['id'], $clients)) {
+    if (!array_key_exists($client['id'], $clients)) {
       $clients[$client['id']] = $default_clients_values;
     }
   
